@@ -8,6 +8,7 @@ const RadioButton = ({insideColor, borderColor, width, done}) => {
             onClick={() => setChecked(!checked)}
             style ={{
                 borderRadius: '50%',
+                cursor: 'pointer',
                 marginLeft: '5px',
                 border: '4px',
                 display: 'flex',

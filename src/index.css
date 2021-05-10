@@ -86,7 +86,16 @@ body {
 .task-description {
   display: inline;
   color: #212128;
-  position: relative;
-  margin-left: 0px;
+  position: absolute;
+  float: left;
   margin-top: 100px;
+  margin-left: 65px;
+}
+
+.deleteTaskButton {
+  display: inline;
+  color: #212128;
+  position: absolute;
+  float: right;
+  left: 95%;
 }
