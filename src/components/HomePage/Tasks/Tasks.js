@@ -7,6 +7,7 @@ const Tasks = ({ tasks }) => {
                 <Task 
                     text={ task.text }
                     done={ task.done }
+                    description={ task.description }
                     key={id}
                 /> 
             ))}

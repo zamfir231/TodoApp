@@ -1,8 +1,11 @@
-import Header from './components/header/Header'
-import Tasks from './components/Tasks'
+import Header from './components/HomePage/header/Header'
+import Tasks from './components/HomePage/Tasks/Tasks'
+import AddTaskInput from './components/HomePage/AddTaskInput'
 import { useState } from 'react'
 
 const App = () => {
+  const [showAddTaskInput, setshowAddTaskInput] = useState(false)
+
   const [tasks, setTasks] = useState([
     {
       text: 'Mergi la fotbal',
@@ -30,9 +33,26 @@ const App = () => {
     }
   ])
 
+  const addTask = (task, description) => {
+    const newTask = {
+      text: task,
+      description: description,
+      done: false,
+      date: '5',
+      day: 'Thursday',
+      Month: 'Dec'
+    }
+
+    setshowAddTaskInput(false)
+    
+    setTasks([...tasks, newTask])
+
+  }
+
   return (
     <div>
-      <Header />
+      <Header onAddTask={() => setshowAddTaskInput(true)} />
+      { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
       <Tasks tasks={ tasks } />
     </div>
   )
