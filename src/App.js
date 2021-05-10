@@ -2,6 +2,11 @@ import Header from './components/HomePage/header/Header'
 import Tasks from './components/HomePage/Tasks/Tasks'
 import AddTaskInput from './components/HomePage/AddTaskInput'
 import { useState } from 'react'
+import { 
+  BrowserRouter as Router ,
+  Route,
+
+} from 'react-router-dom'
 
 const App = () => {
   const [showAddTaskInput, setshowAddTaskInput] = useState(false)
@@ -51,11 +56,16 @@ const App = () => {
 
 
   return (
-    <div>
-      <Header onAddTask={() => setshowAddTaskInput(true)} />
-      { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
-      <Tasks tasks={ tasks } />
-    </div>
+    <Router>
+      <div className='container'>
+        <Route exact path='/'>
+          <Header onAddTask={() => setshowAddTaskInput(true)} />
+          { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
+          <Tasks tasks={ tasks } />
+        </Route>
+        
+      </div>
+    </Router>
   )
 }
 

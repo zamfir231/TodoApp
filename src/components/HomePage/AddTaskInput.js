@@ -61,6 +61,7 @@ const AddTaskInput = ({addTask, onCancel}) => {
                     type="button"
                     onClick={onCancel}
                     style={{
+                        borderRadius: '6px',
                         backgroundColor: "#E33E57",
                         color:'white',
                         display: 'inline',
@@ -77,6 +78,7 @@ const AddTaskInput = ({addTask, onCancel}) => {
                 <button
                     type="submit"
                     style={{
+                        borderRadius: '6px',
                         backgroundColor: "#E33E57",
                         color:'white',
                         width: '70px',

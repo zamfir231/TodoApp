@@ -1,8 +1,12 @@
 import React from 'react'
+import { useHistory } from "react-router-dom";
 
 const DayPageButton = ({date}) => {
+    const history = useHistory();
+
     return (
-        <span
+        <span 
+                onClick={() => history.push('/today')}
                 name='dayButton'
                 style={{
                         position: 'absolute', 
