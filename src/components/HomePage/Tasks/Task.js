@@ -9,7 +9,7 @@ const Task = ({ text, done, description, onDelete }) => {
             <br/>
             <p className='task-description'>{description}</p>
             <FaTimes
-                class='deleteTaskButton'
+                className='deleteTaskButton'
                 style={{ color: '#212128', cursor: 'pointer' }}
             />
         </div>
