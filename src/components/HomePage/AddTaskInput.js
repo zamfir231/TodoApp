@@ -67,7 +67,9 @@ const AddTaskInput = ({addTask, onCancel}) => {
                         border: 'none',
                         width: '70px',
                         height: '30px',
-                        marginBottom: '20px',
+                        marginTop: '20px',
+                        cursor: 'pointer',
+                        marginBottom: '50px',
                     }}
                 >
                     Cancel
@@ -79,7 +81,10 @@ const AddTaskInput = ({addTask, onCancel}) => {
                         color:'white',
                         width: '70px',
                         height: '30px',
-                        marginLeft: '20px',                        
+                        marginTop: '20px',
+                        cursor: 'pointer',
+                        marginBottom: '50px',
+                        marginLeft: '37px',                        
                         display: 'inline',
                         border: 'none',
                         

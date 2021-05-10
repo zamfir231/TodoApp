@@ -5,6 +5,7 @@ const SettingsButton = ({ lines }) => {
         <span
             name='settings-btn'
             style={{
+                cursor: 'pointer',
                 position: 'absolute',
                 top: '10%',
                 left: '90%',

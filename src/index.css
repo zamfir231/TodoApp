@@ -62,6 +62,7 @@ body {
 
 .addTask {
   position: relative;
+  cursor: pointer;
   right: 45%;
   top: 65%;
   display: block;
@@ -81,7 +82,7 @@ body {
   border-radius: 16px;
   width: 175px;
   height: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .task-description {
