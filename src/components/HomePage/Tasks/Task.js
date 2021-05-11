@@ -21,7 +21,6 @@ const Task = ({ page, text, done, description, onDelete }) => {
                 borderColor={page  === 'home' ? '#212128' : '#E33E57'}
                 width='20' 
             />
-            {console.log(page)}
             <h1 
                 style={{
                     marginLeft: '30px', 

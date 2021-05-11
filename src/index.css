@@ -100,3 +100,43 @@ body {
   float: right;
   left: 95%;
 }
+
+#beforeYesterDay {
+  font-size: 40px;
+  color: rgb(240,240,247);
+  position: absolute;
+  left: 12%;
+  top: 8%;
+}
+
+#yesterDay {
+  font-size: 80px;
+  color: rgb(200, 200, 207);
+  position: absolute;
+  left: 25%;
+  top: 13%;
+}
+
+#todayDate {
+  font-size: 100px;
+  color: #212128;
+  position: absolute;
+  left: 45%;
+  top: 20%;
+}
+
+#afterTomorrow {
+  font-size: 40px;
+  color: rgb(240,240,247);
+  position: absolute;
+  left: 83%;
+  top: 8%;
+}
+
+#tomorrow {
+  font-size: 80px;
+  color: rgb(200, 200, 207);
+  position: absolute;
+  left: 70%;
+  top: 13%;
+}

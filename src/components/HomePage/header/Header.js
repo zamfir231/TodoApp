@@ -1,5 +1,6 @@
 import AddTaskButton from "./AddTaskButton"
 import Navbar from './navbar/Navbar'
+import HeaderTextDate from "../../todayPage/HeaderTextDate"
 
 const Header = ({ onAddTask, page }) => {
     return (
@@ -8,8 +9,12 @@ const Header = ({ onAddTask, page }) => {
                 {page === 'home' && <Navbar date='12' /> }
                 <div className='complete-header'>
                 </div>
-                {page === 'home' && <h1 className='header-title'>Intray</h1>}
-                <AddTaskButton onClick={onAddTask } />
+                {page === 'home' ? 
+                    <h1 className='header-title'>Intray</h1>
+                    : 
+                    <HeaderTextDate date={12} />
+                }
+                { page === 'home' && <AddTaskButton onClick={onAddTask } /> }
             </div>
         </header>
     )

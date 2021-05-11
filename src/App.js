@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom'
 
 const App = () => {
+  const [date, setDate] = useState('27')
+
   const [showAddTaskInput, setshowAddTaskInput] = useState(false)
 
   const [tasks, setTasks] = useState([
@@ -24,7 +26,7 @@ const App = () => {
       text: 'Mergi la scoala',
       description: 'La ora 18:30',
       done: false,
-      date: '30',
+      date: '5',
       day: 'Thursday',
       Month: 'Sept',
     },
@@ -54,6 +56,7 @@ const App = () => {
 
   }
 
+  const getTasksForToday = () => tasks.filter(task => task.date === date)
 
   return (
     <Router>
@@ -67,7 +70,10 @@ const App = () => {
         <Route path='/today'>
           <Header pagee='today' onAddTask={() => setshowAddTaskInput(true)} />
           { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
-          <Tasks page='today' tasks={ tasks } />
+          <Tasks 
+            page='today' 
+            tasks={getTasksForToday()}
+          />
         </Route>
         
       </div>
