@@ -1,14 +1,14 @@
 import AddTaskButton from "./AddTaskButton"
 import Navbar from './navbar/Navbar'
 
-const Header = ({ onAddTask }) => {
+const Header = ({ onAddTask, page }) => {
     return (
         <header>
             <div className='header'>
-                <Navbar date='12' />
+                {page === 'home' && <Navbar date='12' /> }
                 <div className='complete-header'>
                 </div>
-                <h1 className='header-title'>Intray</h1>
+                {page === 'home' && <h1 className='header-title'>Intray</h1>}
                 <AddTaskButton onClick={onAddTask } />
             </div>
         </header>

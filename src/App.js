@@ -59,9 +59,15 @@ const App = () => {
     <Router>
       <div className='container'>
         <Route exact path='/'>
-          <Header onAddTask={() => setshowAddTaskInput(true)} />
+          <Header page='home' onAddTask={() => setshowAddTaskInput(true)} />
           { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
-          <Tasks tasks={ tasks } />
+          <Tasks page='home' tasks={ tasks } />
+        </Route>
+
+        <Route path='/today'>
+          <Header pagee='today' onAddTask={() => setshowAddTaskInput(true)} />
+          { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
+          <Tasks page='today' tasks={ tasks } />
         </Route>
         
       </div>

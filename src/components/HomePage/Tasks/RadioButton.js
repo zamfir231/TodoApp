@@ -22,15 +22,17 @@ const RadioButton = ({insideColor, borderColor, width, done}) => {
             }}
         >
 
-            {checked && <span
+            {checked && <span className='radio'
                 style={{
+                    
                     borderRadius: '50%',
                     border: 'none',
                     width: `${width - 10}px`,
                     height: `${width - 10}px`,
                     display: 'inline',
+                    borderColor: borderColor,
                     borderStyle: 'solid',
-                   backgroundColor: borderColor,   
+                    backgroundColor: borderColor,   
                 }}
             >
             </span> }
