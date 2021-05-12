@@ -1,8 +1,9 @@
 import Header from './components/HomePage/header/Header'
 import Tasks from './components/HomePage/Tasks/Tasks'
-import AddTaskInput from './components/HomePage/AddTaskInput'
+import HomePage from './components/HomePage/HomePage'
 import { useState } from 'react'
 import DayTaskBoxes from './components/todayPage/thisWeekPage/DayTaskBoxes'
+import TodayPage from './components/todayPage/TodayPage'
 import { 
   BrowserRouter as Router ,
   Route,
@@ -63,15 +64,22 @@ const App = () => {
     <Router>
       <div className='container'>
         <Route exact path='/'>
-          <Header page='home' onAddTask={() => setshowAddTaskInput(!showAddTaskInput)} />
-          { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
-          <Tasks page='home' tasks={ tasks } />
+          <HomePage 
+            showAddTaskInput={showAddTaskInput}
+            onAddTask={() => setshowAddTaskInput(!showAddTaskInput)}
+            page='home'
+            tasks={tasks}
+            addTask={addTask}
+            onCancel={() => setshowAddTaskInput(false)}
+          />
         </Route>
 
         <Route path='/today'>
-          <Header page='today' onAddTask={() => setshowAddTaskInput(true)} />
-          <Tasks 
-            page='today' 
+          
+
+          <TodayPage 
+            page='today'
+            onAddTask={() => setshowAddTaskInput(true)}
             tasks={getTasksForToday()}
           />
         </Route>
