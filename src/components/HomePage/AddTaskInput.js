@@ -11,6 +11,7 @@ import {
 const AddTaskInput = ({addTask, onCancel}) => {
     const [taskValue, setTaskValue] = useState('')
     const [taskDescripton, setTaskDescription] = useState('')
+    const [day, setDay] = useState()
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -20,7 +21,17 @@ const AddTaskInput = ({addTask, onCancel}) => {
             return
         }
 
-        addTask(taskValue, taskDescripton)
+        if (day > 31) {
+            alert(`${day} is not a valid date`)
+            return
+        }
+
+        if (day < 1) {
+            alert(`${day} is not a valid date`)
+            return
+        }
+
+        addTask(taskValue, taskDescripton, day)
         setTaskValue('')
         setTaskDescription('')
     }
@@ -52,6 +63,18 @@ const AddTaskInput = ({addTask, onCancel}) => {
                         type='text'
                         defaultValue=''
                         onChange={(e) => setTaskDescription(e.target.value)}
+                        inputProps={{
+                            style: {textAlign: 'center',  color: '#FFFFFF'},
+                        }}
+                    />
+                </Grid>
+                <Grid item xs={12} align='center'>
+                    <label style={{color:'#FFF'}} htmlFor='taskDay'>Day</label>
+                    <TextField 
+                        required={false}
+                        type='number'
+                        defaultValue=''
+                        onChange={(e) => setDay(e.target.value)}
                         inputProps={{
                             style: {textAlign: 'center',  color: '#FFFFFF'},
                         }}

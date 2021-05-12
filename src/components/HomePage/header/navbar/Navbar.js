@@ -3,7 +3,7 @@ import SettingsButton from './SettingsButton'
 import PlusButton from './PlusButton'
 import DayPageButton from './DayPageButton'
 
-const Navbar = ({ date }) => {
+const Navbar = ({ date, page }) => {
     return (
         <nav>
             <DayPageButton date={date} />

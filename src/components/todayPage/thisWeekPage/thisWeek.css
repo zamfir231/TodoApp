@@ -1,0 +1,16 @@
+.day-task-box {
+    cursor: pointer;
+    width: 2vh;
+    height: 3vh;
+    background-color: #E33E57;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-line {
+    width: 70%;
+    height: 2px;
+    background-color: #212128;
+    margin-bottom: 5px;
+}

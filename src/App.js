@@ -2,6 +2,7 @@ import Header from './components/HomePage/header/Header'
 import Tasks from './components/HomePage/Tasks/Tasks'
 import AddTaskInput from './components/HomePage/AddTaskInput'
 import { useState } from 'react'
+import DayTaskBoxes from './components/todayPage/thisWeekPage/DayTaskBoxes'
 import { 
   BrowserRouter as Router ,
   Route,
@@ -9,7 +10,7 @@ import {
 } from 'react-router-dom'
 
 const App = () => {
-  const [date, setDate] = useState('27')
+  const [date, setDate] = useState('5')
 
   const [showAddTaskInput, setshowAddTaskInput] = useState(false)
 
@@ -40,12 +41,12 @@ const App = () => {
     }
   ])
 
-  const addTask = (task, description) => {
+  const addTask = (task, description, date) => {
     const newTask = {
       text: task,
       description: description,
       done: false,
-      date: '5',
+      date: date,
       day: 'Thursday',
       Month: 'Dec'
     }
@@ -62,20 +63,19 @@ const App = () => {
     <Router>
       <div className='container'>
         <Route exact path='/'>
-          <Header page='home' onAddTask={() => setshowAddTaskInput(true)} />
+          <Header page='home' onAddTask={() => setshowAddTaskInput(!showAddTaskInput)} />
           { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
           <Tasks page='home' tasks={ tasks } />
         </Route>
 
         <Route path='/today'>
-          <Header pagee='today' onAddTask={() => setshowAddTaskInput(true)} />
-          { showAddTaskInput && <AddTaskInput addTask={addTask} onCancel={() => setshowAddTaskInput(false)} /> }
+          <Header page='today' onAddTask={() => setshowAddTaskInput(true)} />
           <Tasks 
             page='today' 
             tasks={getTasksForToday()}
           />
         </Route>
-        
+        <Route path='this-week'><DayTaskBoxes howManyDays={2} /></Route>
       </div>
     </Router>
   )
