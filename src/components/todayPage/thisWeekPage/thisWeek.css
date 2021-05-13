@@ -1,16 +1,36 @@
+@import "../../../css/config.css";
+
 .day-task-box {
     cursor: pointer;
-    width: 2vh;
-    height: 3vh;
-    background-color: #E33E57;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 75px;
+    height: 100px;
+    background-color: var(--main-color);
+    border-radius: 8px;
+}
+
+.day-task-box:hover {
+    background-color: var(--main-color);
 }
 
 .task-line {
+    display: block;
+    position: relative;
     width: 70%;
-    height: 2px;
-    background-color: #212128;
-    margin-bottom: 5px;
+    height: 5px;
+    background-color: var(--dark-color);
+    left: 15%;
+    right: 0%;
+    margin-top: 12px;
+}
+
+.task-boxes-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.day-name {
+    color: var(--main-color);
+    font-size: 2em;
+    position: relative;
+    right: .5rem;
 }

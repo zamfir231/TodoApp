@@ -1,8 +1,6 @@
-import Header from './components/HomePage/header/Header'
-import Tasks from './components/HomePage/Tasks/Tasks'
 import HomePage from './components/HomePage/HomePage'
 import { useState } from 'react'
-import DayTaskBoxes from './components/todayPage/thisWeekPage/DayTaskBoxes'
+import ThisWeekPage from './components/todayPage/thisWeekPage/ThisWeekPage'
 import TodayPage from './components/todayPage/TodayPage'
 import { 
   BrowserRouter as Router ,
@@ -75,15 +73,19 @@ const App = () => {
         </Route>
 
         <Route path='/today'>
-          
-
           <TodayPage 
             page='today'
             onAddTask={() => setshowAddTaskInput(true)}
             tasks={getTasksForToday()}
           />
         </Route>
-        <Route path='this-week'><DayTaskBoxes howManyDays={2} /></Route>
+        <Route path='/this-week'>
+          <ThisWeekPage 
+            howManyDays={7} 
+            page="this-week" 
+            onAddTask={() => setshowAddTaskInput(true)} 
+          />
+        </Route>
       </div>
     </Router>
   )

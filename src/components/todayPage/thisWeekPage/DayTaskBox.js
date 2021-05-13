@@ -2,7 +2,7 @@ import React from 'react'
 
 const DayTaskBox = ({ numberOfTasks }) => {
     return (
-        <span className='dayTaskBox'>
+        <span className='day-task-box'>
             { [...Array(numberOfTasks)].map((_, index) => (
                 <span 
                     className='task-line' 
