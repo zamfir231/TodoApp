@@ -81,6 +81,7 @@ const App = () => {
         </Route>
         <Route path='/this-week'>
           <ThisWeekPage 
+            tasks={getTasksForToday()}
             howManyDays={7} 
             page="this-week" 
             onAddTask={() => setshowAddTaskInput(true)} 

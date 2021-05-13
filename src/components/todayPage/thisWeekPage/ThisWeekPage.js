@@ -1,16 +1,22 @@
 import React from 'react'
 import DayTaskBoxes from './DayTaskBoxes'
+import TasksThisWeek from './TasksThisWeek'
 import './thisWeek.css'
 import Header from '../../HomePage/header/Header'
 
-const ThisWeekPage = ({ howManyDays, page, onAddTask }) => {
+const ThisWeekPage = ({ 
+    tasks,
+    howManyDays, 
+    page, 
+    onAddTask 
+}) => {
     return (
         <div>
             <Header page={page} onAddTask={onAddTask}/>
-            <DayTaskBoxes howManyDays={howManyDays} />
-            <div style={{width: '100px', height: '10000px'}}></div>
+            <DayTaskBoxes howManyDays={howManyDays} /> 
+            <TasksThisWeek tasks={tasks} day='Monday' />
         </div>
-    )
+    )   
 }
 
 export default ThisWeekPage
