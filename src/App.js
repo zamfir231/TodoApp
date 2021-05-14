@@ -1,7 +1,10 @@
 import HomePage from './components/HomePage/HomePage'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ThisWeekPage from './components/todayPage/thisWeekPage/ThisWeekPage'
 import TodayPage from './components/todayPage/TodayPage'
+import 
+ThisMonthPage 
+from './components/todayPage/thisWeekPage/thisMonthPage/ThisMonthPage'
 import { 
   BrowserRouter as Router ,
   Route,
@@ -79,12 +82,19 @@ const App = () => {
             tasks={getTasksForToday()}
           />
         </Route>
-        <Route path='/this-week'>
+        <Route exact path='/this-week'>
           <ThisWeekPage 
             tasks={getTasksForToday()}
             howManyDays={7} 
             page="this-week" 
             onAddTask={() => setshowAddTaskInput(true)} 
+          />
+        </Route>
+        <Route exact path='/this-month'>
+          <ThisMonthPage
+            howManyDays={29}
+            page='this-month'
+            onAddTask={() => setshowAddTaskInput(true)}
           />
         </Route>
       </div>

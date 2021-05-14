@@ -12,6 +12,10 @@ const Header = ({ onAddTask, page }) => {
                 {page === 'home' ? 
                     <h1 className='header-title'>Intray</h1>
                     : 
+                    page === 'this-month'
+                    ?
+                    <></>
+                    :
                     <HeaderTextDate date={12} />
                 }
                 { page === 'home' && <AddTaskButton onClick={onAddTask } /> }
