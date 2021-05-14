@@ -1,11 +1,15 @@
 import RadioButton from "./RadioButton";
 import { FaTimes } from 'react-icons/fa'
+import { useState } from 'react'
 
 const Task = ({ page, text, done, description, onDelete }) => {
+    const [backgroundColor, setBackgroundColor] = useState('#E33E57')
+
     return (
-        <div className='task' style={{
+        <div className='task' 
+            style={{
             backgroundColor: page === 'today' ?  '#212128' : '#E33E57',
-            marginLeft: page === 'this-week-page' ? '30vw' : '0',  
+            marginLeft: page === 'this-week-page' && '30vw',  
             width: page === 'this-week-page' && '50%',  
         }} >
             
