@@ -2,6 +2,8 @@ import HomePage from './components/HomePage/HomePage'
 import { useState, useEffect } from 'react'
 import ThisWeekPage from './components/todayPage/thisWeekPage/ThisWeekPage'
 import TodayPage from './components/todayPage/TodayPage'
+import Login from './components/Auth/Login'
+import SignUp from './components/Auth/SignUp'
 import 
 ThisMonthPage 
 from './components/todayPage/thisWeekPage/thisMonthPage/ThisMonthPage'
@@ -61,6 +63,20 @@ const App = () => {
 
   const getTasksForToday = () => tasks.filter(task => task.date === date)
 
+  useEffect(() => {
+    fetch('/api/haha', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            hatz: 'haha',
+        }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }, [])
+
   return (
     <Router>
       <div className='container'>
@@ -96,6 +112,12 @@ const App = () => {
             page='this-month'
             onAddTask={() => setshowAddTaskInput(true)}
           />
+        </Route>
+        <Route exact path='/login'>
+          <Login title='Login' />
+        </Route>
+        <Route exact path='/sign-up'>
+          <SignUp title='Sign Up' />
         </Route>
       </div>
     </Router>

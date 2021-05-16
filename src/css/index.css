@@ -141,3 +141,62 @@ body {
   left: 70%;
   top: 13%;
 }
+
+.helper-text {
+  color: var(--dark-color)
+}
+
+.login-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.helper-text {
+  color: var(--main-color)
+}
+
+.auth-title {
+  color: var(--main-color)
+}
+
+.auth-input {
+  background-color: inherit;
+  border-style: hidden hidden groove hidden;
+  outline: none;
+  border-color: rgba(227,	62,	87, 0.5);
+  font-size: 1rem;
+  width: 12rem;
+  color: rgba(227,	62,	87, 0.5);
+}
+
+.auth-input:hover {
+  border-color: rgba(227,	62,	87, 1);
+  color: rgba(227,	62,	87, 1);
+}
+
+.auth-input:focus {
+  border-color: rgba(227,	62,	87, 1);
+  color: rgba(227,	62,	87, 1)
+}
+
+.text {
+  color: var(--main-color);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-auth {
+  display: flex;
+  width: 35%;
+  justify-content: space-around;
+}
