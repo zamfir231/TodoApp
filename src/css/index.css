@@ -170,23 +170,25 @@ body {
 }
 
 .auth-input {
-  background-color: inherit;
-  border-style: hidden hidden groove hidden;
-  outline: none;
-  border-color: rgba(227,	62,	87, 0.5);
-  font-size: 1rem;
-  width: 12rem;
-  color: rgba(227,	62,	87, 0.5);
+
+  background-color: inherit !important;
+  text-align: center !important;
+  border-style: hidden hidden groove hidden !important;
+  outline: none !important;
+  border-color: rgba(227,	62,	87, 0.5) !important;
+  font-size: 1rem !important;
+  width: 12rem !important;
+  color: rgba(227,	62,	87, 0.5) !important;
 }
 
 .auth-input:hover {
-  border-color: rgba(227,	62,	87, 1);
-  color: rgba(227,	62,	87, 1);
+  border-color: rgba(227,	62,	87, 1) !important;
+  color: rgba(227,	62,	87, 1) !important;
 }
 
 .auth-input:focus {
-  border-color: rgba(227,	62,	87, 1);
-  color: rgba(227,	62,	87, 1)
+  border-color: rgba(227,	62,	87, 1) !important;
+  color: rgba(227,	62,	87, 1) !important;
 }
 
 .text {

@@ -8,8 +8,51 @@ const Login = ({ title }) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
+    const onSubmit = e => {
+        e.preventDefault();
+        if (email.length < 5) {
+            alert('Email must be longer than 4 characters')
+            return
+        }
+
+        if (name.length < 2) {
+            alert('Name must be longer than 1 character')
+            return
+        }
+
+        if (password.length < 5) {
+            alert('Password must be at least 5 characters long')
+            console.log(password)
+            return
+        }
+
+        if (confirmPassword !== password) {
+            alert('Your passwords don\'t match')
+            return
+        }
+
+        setEmail('')
+        setName('')
+        setPassword('')
+        setConfirmPassword('')
+
+        fetch('/api/sign-up', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                name: name,
+                password: password
+            })
+        })
+            .then(response => response.json)
+            .then(data => console.log(data))
+    }
+
     return (
-        <form className='login-form'>
+        <form autoComplete="off" className='login-form' onSubmit={onSubmit}>
             <h1 className='auth-title'>{title}</h1>
             <div className='form-control'>
                 <label htmlFor='email' className='helper-text'>email</label>
@@ -69,7 +112,7 @@ const Login = ({ title }) => {
                         style={{
                             color: '#E33E57',
                         }}
-                    >
+                    > 
                         Login
                     </Link>
                 </p>

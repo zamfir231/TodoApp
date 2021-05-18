@@ -63,20 +63,6 @@ const App = () => {
 
   const getTasksForToday = () => tasks.filter(task => task.date === date)
 
-  useEffect(() => {
-    fetch('/api/haha', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            hatz: 'haha',
-        }),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-  }, [])
-
   return (
     <Router>
       <div className='container'>

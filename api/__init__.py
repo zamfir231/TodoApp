@@ -16,7 +16,7 @@ def create_app():
 
     app.register_blueprint(views, url_prefix='/api')
 
-    from .models import Task
+    from .models import Task, User
 
     create_database(app)
 

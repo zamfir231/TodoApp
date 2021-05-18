@@ -6,8 +6,37 @@ const Login = ({ title }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const onSubmit = e => {
+        e.preventDefault();
+        if (email.length < 5) {
+            alert('Email must be longer than 4 characters')
+            return
+        }
+
+        if (password.length <= 5) {
+            alert('Password must be at least 5 characters long')
+            return
+        }
+
+        setEmail('')
+        setPassword('')
+
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+            .then(response => response.json)
+            .then(data => console.log(data))
+    }
+
     return (
-        <form className='login-form'>
+        <form autoComplete="off" className='login-form' onSubmit={onSubmit}>
             <h1 className='auth-title'>{title}</h1>
             <div className='form-control'>
                 <label htmlFor='email' className='helper-text'>email</label>
